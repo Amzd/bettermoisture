@@ -1,0 +1,14 @@
+{
+    "type": "code",
+    "name": "BetterMoisture",
+    "modid": "me.amzd.bettermoisture11111",
+    "version": "0.0.3",
+
+    "description": "Fixes moisture issues",
+    "website": "",
+    "authors": [ "Amzd" ],
+    "side": "Server",
+    "dependencies": {
+        "survival": "1.18.6"
+    }
+}
