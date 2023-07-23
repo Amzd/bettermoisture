@@ -58,7 +58,7 @@ namespace BetterMoisture
 
             // Get wet from all the rainfall since last update
             // Original: Incorrect hour to day calculation caused this to not work at all.
-            // New:
+            // New: fixed
             if (skyExposed)
             {
                 BlockFarmland blockFarmland = __instance.GetField<BlockFarmland>("blockFarmland");
