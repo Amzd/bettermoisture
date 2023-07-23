@@ -33,7 +33,7 @@ namespace BetterMoisture
             float[] moistureValues = { 1f, 0.8f, 0.6f, 0.4f, 0f }; // TODO: Make this configurable
             float moistureFromWaterDistance = moistureValues[GameMath.Clamp((int)waterDistance - 1, 0, moistureValues.Length - 1)];
 
-            // Why does is this capped to 48?
+            // Why is this capped to 48?
             // Is it due to a calculation issue?
             // Possibly can't get precipitation over 48 hours back?
             // Is that related to days? then this should maybe be Api.World.Calendar.HoursPerDay not 48.
