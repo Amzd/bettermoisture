@@ -2,10 +2,9 @@
     "type": "code",
     "name": "BetterMoisture",
     "modid": "me.amzd.bettermoisture",
-    "version": "0.0.3",
-
+    "version": "0.0.9",
     "description": "Fixes moisture issues",
-    "website": "",
+    "website": "https://github.com/Amzd/bettermoisture",
     "authors": [ "Amzd" ],
     "side": "Server",
     "dependencies": {
