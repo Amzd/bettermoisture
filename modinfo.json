@@ -1,7 +1,7 @@
 {
     "type": "code",
     "name": "BetterMoisture",
-    "modid": "me.amzd.bettermoisture",
+    "modid": "bettermoisture",
     "version": "1.0.0",
     "description": "Fixes farmland moisture issues",
     "website": "https://github.com/Amzd/bettermoisture",
