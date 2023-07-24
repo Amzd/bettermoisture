@@ -8,6 +8,6 @@
     "authors": [ "Amzd" ],
     "side": "Server",
     "dependencies": {
-        "survival": "1.16.0"
+        "survival": "1.18.6"
     }
 }
