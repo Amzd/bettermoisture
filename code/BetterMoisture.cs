@@ -3,6 +3,8 @@ using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 using Vintagestory.API.MathTools;
 using System;
+using System.Reflection;
+using System.Linq;
 
 namespace BetterMoisture
 {
@@ -10,18 +12,23 @@ namespace BetterMoisture
     {
         public override void Start(ICoreAPI api)
         {
-            api.Logger.Debug("[BetterMoistureMod] Start");
+            api.Logger.Debug("[BetterMoistureMod] Start 5");
             base.Start(api);
 
             var harmony = new Harmony("me.amzd.bettermoisture");
 
-            var originalUpdateMoistureLevel = typeof(BlockEntityFarmland).GetMethod("updateMoistureLevel");
+            var originalUpdateMoistureLevel = typeof(BlockEntityFarmland).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).First(
+                m => m.Name == "updateMoistureLevel" && m.GetParameters().Length == 4
+            );
+            var newUpdateMoistureLevel = typeof(BetterMoistureMod).GetMethod("updateMoistureLevel");
 
-            harmony.Patch(originalUpdateMoistureLevel, prefix: typeof(BetterMoistureMod).GetMethod("updateMoistureLevel"));
+            api.Logger.Debug("[BetterMoistureMod] Original: " + originalUpdateMoistureLevel.Name + " " + originalUpdateMoistureLevel.GetParameters().Last().ParameterType.ToString());
+            api.Logger.Debug("[BetterMoistureMod] New: " + newUpdateMoistureLevel.Name);
 
+            harmony.Patch(originalUpdateMoistureLevel, prefix: newUpdateMoistureLevel);
         }
 
-        bool updateMoistureLevel(BlockEntityFarmland __instance, ref bool __result, double totalDays, float waterDistance, bool skyExposed, ClimateCondition baseClimate = null)
+        public bool updateMoistureLevel(BlockEntityFarmland __instance, ref bool __result, double totalDays, float waterDistance, bool skyExposed, ClimateCondition baseClimate = null)
         {
             float moistureLevel = __instance.GetField<float>("moistureLevel");
             float lastMoistureLevelUpdateTotalDays = __instance.GetField<float>("lastMoistureLevelUpdateTotalDays");

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net7</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,5 +24,4 @@
       <HintPath>/usr/share/vintagestory/Mods/VSSurvivalMod.dll</HintPath>
     </Reference>
   </ItemGroup>
-
 </Project>
