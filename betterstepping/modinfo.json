@@ -1,0 +1,13 @@
+{
+    "type": "code",
+    "name": "Better Stepping",
+    "modid": "betterstepping",
+    "version": "1.0.0",
+    "description": "Step up when not fully alligned",
+    "website": "https://github.com/Amzd/vsmods",
+    "authors": [ "Amzd" ],
+    "side": "Client",
+    "dependencies": {
+        "survival": "1.18.6"
+    }
+}
