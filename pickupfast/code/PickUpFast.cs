@@ -41,6 +41,7 @@ namespace PickUpFast
 
         public static void afterOnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
         {
+            if (byPlayer == null) return;
             // Get item entities in this blocks position, created in last 10 milliseconds
             Entity[] entities = world.GetEntitiesAround(pos.ToVec3d(), 1, 1, (e) => (e is EntityItem eI && eI.GetField<long>("itemSpawnedMilliseconds") > world.ElapsedMilliseconds - 10));
             // Set the byPlayerUID of the newly created entities
