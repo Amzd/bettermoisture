@@ -2,7 +2,7 @@
     "type": "code",
     "name": "Pick Up Fast",
     "modid": "pickupfast",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Pick up blocks you broke FAST",
     "website": "https://github.com/Amzd/vsmods",
     "authors": [ "Amzd" ],
