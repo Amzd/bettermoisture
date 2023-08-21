@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Add dependencies
-      uses: Amzd/vsdep@v0.4
+      uses: Amzd/vsdep@master
       with:
         version: 1.18.8
         vspath: /usr/share/vintagestory/
