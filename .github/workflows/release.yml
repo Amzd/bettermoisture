@@ -59,7 +59,7 @@ jobs:
         draft: false
         prerelease: false
         release_name: ${{ inputs.mod }} ${{ fromJson(env.MODINFO_JSON).version }}
-        tag_name: ${{ inputs.mod }} ${{ fromJson(env.MODINFO_JSON).version }}
+        tag_name: ${{ inputs.mod }}-${{ fromJson(env.MODINFO_JSON).version }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
