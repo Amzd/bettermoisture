@@ -32,9 +32,9 @@ jobs:
         vspath: /usr/share/vintagestory/
 
     - name: downcase input because the folders are lowercase
-        run: |
-          MOD=${{ inputs.mod }}
-          echo "MODFOLDER=${MOD,,}" >>${GITHUB_ENV}
+      run: |
+        MOD=${{ inputs.mod }}
+        echo "MODFOLDER=${MOD,,}" >>${GITHUB_ENV}
 
     - name: Build
       run: dotnet build ${MODFOLDER}/code/
