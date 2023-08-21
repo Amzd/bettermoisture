@@ -53,13 +53,13 @@ jobs:
         echo 'EOF' >> $GITHUB_ENV
 
     - name: Release
-      uses: actions/create-release@v1
+      uses: actions/create-release@v1.1.4
       id: create_release
       with:
         draft: false
         prerelease: false
         release_name: ${{ inputs.mod }} ${{ fromJson(env.MODINFO_JSON).version }}
-        tag_name: ${{ github.ref }}
+        tag_name: ${{ inputs.mod }} ${{ fromJson(env.MODINFO_JSON).version }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
