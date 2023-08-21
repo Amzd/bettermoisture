@@ -69,6 +69,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./${MODFOLDER}/${{ inputs.mod }}.zip
+        asset_path: ./${{ env.MODFOLDER }}/${{ inputs.mod }}.zip
         asset_name: ${{ inputs.mod }}.zip
         asset_content_type: application/zip
