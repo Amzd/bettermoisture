@@ -39,18 +39,18 @@ jobs:
     - name: Build
       run: dotnet build ${MODFOLDER}/code/
 
-    - name: zip
-      run: |
-        cd ${MODFOLDER}
-        mv code/bin/Debug/net7/${{ inputs.mod }}.dll .
-        mv code/bin/Debug/net7/${{ inputs.mod }}.pdb .
-        7z a ${{ inputs.mod }}.zip ${{ inputs.mod }}.dll ${{ inputs.mod }}.pdb modinfo.json
-
     - name: Write modinfo.json to env
       run: |
         echo 'MODINFO_JSON<<EOF' >> $GITHUB_ENV
         cat ./${MODFOLDER}/modinfo.json >> $GITHUB_ENV
         echo 'EOF' >> $GITHUB_ENV
+
+    - name: zip
+      run: |
+        cd ${MODFOLDER}
+        mv code/bin/Debug/net7/${{ inputs.mod }}.dll .
+        mv code/bin/Debug/net7/${{ inputs.mod }}.pdb .
+        7z a ${{ inputs.mod }}-${{ fromJson(env.MODINFO_JSON).version }}.zip ${{ inputs.mod }}.dll ${{ inputs.mod }}.pdb modinfo.json
 
     - name: Release
       uses: actions/create-release@v1.1.4
@@ -69,6 +69,6 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./${{ env.MODFOLDER }}/${{ inputs.mod }}.zip
-        asset_name: ${{ inputs.mod }}.zip
+        asset_path: ./${{ env.MODFOLDER }}/${{ inputs.mod }}-${{ fromJson(env.MODINFO_JSON).version }}.zip
+        asset_name: ${{ inputs.mod }}-${{ fromJson(env.MODINFO_JSON).version }}.zip
         asset_content_type: application/zip
