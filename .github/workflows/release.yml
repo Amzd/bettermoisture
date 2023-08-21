@@ -60,7 +60,6 @@ jobs:
         prerelease: false
         release_name: ${{ inputs.mod }} ${{ fromJson(env.MODINFO_JSON).version }}
         tag_name: ${{ github.ref }}
-        body_path: CHANGELOG.md
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
