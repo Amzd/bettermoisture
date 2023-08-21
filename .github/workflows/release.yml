@@ -11,9 +11,6 @@ on:
         - BetterStepping
         - PickUpFast
         required: true
-      message:
-        description: Message
-        required: true
 
 jobs:
   build:
