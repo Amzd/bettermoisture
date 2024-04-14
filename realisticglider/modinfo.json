@@ -1,0 +1,13 @@
+{
+    "type": "code",
+    "name": "Realistic Glider",
+    "modid": "realisticglider",
+    "version": "0.0.1",
+    "description": "Ridge soaring",
+    "website": "https://github.com/Amzd/vsmods",
+    "authors": [ "Amzd" ],
+    "side": "Client",
+    "dependencies": {
+        "altgliderimplementation": "1.1.2"
+    }
+}

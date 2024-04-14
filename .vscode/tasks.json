@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+        "label": "bettermoisture",
+        "command": "dotnet build bettermoisture/code",
+        // "command": "dotnet build bettermoisture/code && ./../../ApplicationData/vs_client_linux-x64_1/Vintagestory -oskatestest",
+        "type": "shell",
+        "problemMatcher": "$msCompile"
+    },{
+        "label": "iceskates",
+        "command": "dotnet build iceskates/code",
+        "type": "shell",
+        "problemMatcher": "$msCompile"
+    },{
+        "label": "pickupfast",
+        "command": "dotnet build pickupfast/code",
+        "type": "shell",
+        "problemMatcher": "$msCompile"
+    },{
+        "label": "betterstepping",
+        "command": "dotnet build betterstepping/code",
+        "type": "shell",
+        "problemMatcher": "$msCompile"
+    },{
+        "label": "realisticglider",
+        "command": "dotnet build realisticglider/code",
+        "type": "shell",
+        "problemMatcher": "$msCompile"
+    }]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "code",
+    "name": "Ice Skates",
+    "modid": "iceskates",
+    "version": "1.0.0",
+    "description": "Adds Ice Skates",
+    "website": "https://github.com/Amzd/vsmods",
+    "authors": [ "Amzd" ],
+    "side": "Server",
+    "dependencies": {
+        "survival": "1.18.6"
+    }
+}
